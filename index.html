@@ -18,14 +18,32 @@
 {"name":"ga-test","description":null,"author":null,"@type":"WebSite","url":"https://yashatgit.github.io/ga-test/","image":null,"publisher":null,"headline":"Welcome to GitHub Pages","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
     <!-- End Jekyll SEO tag -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39425421-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-39425421-3');
+        // ga('set', 'metric1', '123');
     </script>
-
+    <script type="text/javascript">
+        $.ajax({
+            type: "GET",
+            dataType: 'application/JSON',
+            url: 'http://pixel-nqa.sprinklr.com/ip2json',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            }
+        })
+            .done(function (data) {
+                console.log("done");
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                alert(xhr.responseText);                
+            });
+    </script>
 </head>
 
 <body>

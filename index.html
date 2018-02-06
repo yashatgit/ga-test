@@ -24,28 +24,9 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'UA-39425421-3');
-        gtag('event', 'age_dimension', {'dimension1': 'dimension1-check'});
-        gtag('event', 'age_dimension', {'test-dimension': 'test-dimension-check'});
-        // ga('set', 'metric1', '123');
+        gtag('config', 'UA-39425421-3');        
     </script>
-    <script type="text/javascript">
-        $.ajax({
-            type: "GET",
-            dataType: 'json',
-            url: 'https://pixel-nqa.sprinklr.com/ip2json',
-            crossDomain: true,
-            xhrFields: {
-                withCredentials: true
-            }
-        })
-            .done(function (data) {
-                console.log("done");
-            })
-            .fail(function (xhr, textStatus, errorThrown) {
-                alert(xhr.responseText);                
-            });
-    </script>
+    <script src="./gaIPTracker.js"></script>    
 </head>
 
 <body>

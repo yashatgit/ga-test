@@ -53,7 +53,7 @@ var mapResponseToGACF = function(response) {
 };
 var init = function() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://pixel-nqa.sprinklr.com/ip2json");
+  xhr.open("GET", "https://pixel-nqa.sprinklr.com/ip2json");
   xhr.onload = function() {
     if (xhr.status === 200) {
       try {

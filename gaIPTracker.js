@@ -55,8 +55,21 @@ var mapResponseToGACF = function(response) {
   }
 
   gtag && gtag("event", "page_view", finalGtagMapping);
+  console.log(finalGtagMapping);
 };
-var init = function() {
+
+function sendAJAXReq(){
+  $.ajax({
+    url: "https://pixel-nqa.sprinklr.com/ip2json",
+    jsonp: "$jsonp",
+    dataType: "jsonp",  
+    success: function( response ) {
+      mapResponseToGACF(response)
+    }
+  });
+};
+
+function sendXMLHTTPReq(){
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://pixel-nqa.sprinklr.com/ip2json");
   xhr.onload = function() {
@@ -67,6 +80,10 @@ var init = function() {
     }
   };
   xhr.send();
+}
+
+var init = function() {
+  sendXMLHTTPReq();
 };
 
 init();
